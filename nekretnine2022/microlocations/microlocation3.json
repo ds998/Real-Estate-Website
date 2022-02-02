@@ -1,0 +1,14 @@
+{
+    "_id" : ObjectId("61dee1278409ec2aff1c325a"),
+    "streets" : [ 
+        "Bulevar Kralja Aleksandra"
+    ],
+    "lines" : [ 
+        5, 
+        7
+    ],
+    "name" : "Čubura",
+    "city" : "Beograd",
+    "municipality" : "Palilula",
+    "__v" : 0
+}

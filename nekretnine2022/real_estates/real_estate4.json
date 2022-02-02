@@ -1,0 +1,43 @@
+{
+    "_id" : ObjectId("61f1bee2481ab4340e2b58a2"),
+    "lines" : [ 
+        5, 
+        7
+    ],
+    "characteristics" : [ 
+        "Klima", 
+        "Internet", 
+        "Telefon", 
+        "Sa baštom", 
+        "Francuski balkon", 
+        "Podrum"
+    ],
+    "pictures" : [ 
+        "Kuca35-Bulevar Kralja Aleksandra-61dee1278409ec2aff1c325a-lebron-1-enterijer_1.jpeg", 
+        "Kuca35-Bulevar Kralja Aleksandra-61dee1278409ec2aff1c325a-lebron-2-eksterijer_1.jpeg", 
+        "Kuca35-Bulevar Kralja Aleksandra-61dee1278409ec2aff1c325a-lebron-3-eksterijer_2.jpeg"
+    ],
+    "name" : "Kuca35",
+    "microlocation" : "61dee1278409ec2aff1c325a",
+    "street" : "Bulevar Kralja Aleksandra",
+    "area" : 65,
+    "type" : "Kuća",
+    "rooms" : 5,
+    "construction_year" : 2022,
+    "state" : "izvorno",
+    "heating" : "TA",
+    "floor" : 0,
+    "total_floors" : 2,
+    "parking" : "Da",
+    "monthly_utilities" : 350,
+    "price" : 155000,
+    "about" : "Veoma opremljena kuca.",
+    "advertiser" : {
+        "type" : "individual",
+        "PIB" : "",
+        "username" : "lebron"
+    },
+    "selling_month" : 0,
+    "change_time" : null,
+    "__v" : 0
+}

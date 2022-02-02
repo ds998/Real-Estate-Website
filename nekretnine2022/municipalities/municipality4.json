@@ -1,0 +1,11 @@
+{
+    "_id" : ObjectId("61cc5fdf986368abdcad62b2"),
+    "name" : "Zvezdara",
+    "city" : "Beograd",
+    "lines" : [ 
+        3, 
+        11, 
+        14, 
+        15
+    ]
+}

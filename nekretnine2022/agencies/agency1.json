@@ -1,0 +1,8 @@
+{
+    "_id" : ObjectId("61d07d86986368abdcad8e0e"),
+    "name" : "Beograd Nekretnine Agencija",
+    "address" : "Krunska 25",
+    "city" : "Beograd",
+    "phone" : "0111260578",
+    "PIB" : "011022033"
+}

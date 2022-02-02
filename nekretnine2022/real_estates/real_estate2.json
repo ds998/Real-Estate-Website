@@ -1,0 +1,43 @@
+{
+    "_id" : ObjectId("61e30e196d8bcb305c1f2795"),
+    "lines" : [ 
+        5
+    ],
+    "state" : "renovirano",
+    "heating" : "gas",
+    "characteristics" : [ 
+        "Lift", 
+        "Klima", 
+        "Internet", 
+        "Telefon"
+    ],
+    "pictures" : [ 
+        "Starogradnja-Bulevar Kralja Aleksandra-naruto-1-eksterijer_1.jpeg", 
+        "Starogradnja-Bulevar Kralja Aleksandra-naruto-2-eksterijer_2.jpeg", 
+        "Starogradnja-Bulevar Kralja Aleksandra-naruto-3-eksterijer_3.jpeg", 
+        "Starogradnja-Bulevar Kralja Aleksandra-naruto-4-enterijer_1.jpeg", 
+        "Starogradnja-Bulevar Kralja Aleksandra-naruto-5-enterijer_2.jpeg", 
+        "Starogradnja-Bulevar Kralja Aleksandra-naruto-6-enterijer_3.jpeg"
+    ],
+    "name" : "Starogradnja",
+    "microlocation" : "61dee1278409ec2aff1c325a",
+    "street" : "Bulevar Kralja Aleksandra",
+    "area" : 58,
+    "type" : "Stan",
+    "rooms" : 3,
+    "construction_year" : 2017,
+    "floor" : 6,
+    "total_floors" : 8,
+    "parking" : "Ne",
+    "monthly_utilities" : 250,
+    "price" : 250000,
+    "about" : "Stariji stan,ali i dalje dobar.",
+    "advertiser" : {
+        "type" : "agency",
+        "PIB" : "011022033",
+        "username" : "naruto"
+    },
+    "selling_month" : 0,
+    "change_time" : ISODate("2022-01-15T18:27:31.922Z"),
+    "__v" : 0
+}

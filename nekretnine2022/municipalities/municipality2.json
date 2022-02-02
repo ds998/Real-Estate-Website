@@ -1,0 +1,10 @@
+{
+    "_id" : ObjectId("61cc5f01986368abdcad628f"),
+    "name" : "Novo Naselje",
+    "city" : "Novi Sad",
+    "lines" : [ 
+        3, 
+        4, 
+        6
+    ]
+}

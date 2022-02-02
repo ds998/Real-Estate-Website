@@ -1,0 +1,18 @@
+{
+    "_id" : ObjectId("61df2a9e03e63d33df990135"),
+    "favorites" : [],
+    "name" : "Mladen",
+    "surname" : "Jugovic",
+    "username" : "naruto",
+    "password" : "BajinaBasta22???",
+    "type" : "advertiser",
+    "city" : "Bajina Basta",
+    "birthday" : ISODate("1998-06-24T00:00:00.000Z"),
+    "email" : "mjugovic@hotmail.com",
+    "phone" : "0112025677",
+    "picture" : "naruto-favicon.png",
+    "agency" : "011022035",
+    "licence" : 13,
+    "approved" : 1,
+    "__v" : 0
+}

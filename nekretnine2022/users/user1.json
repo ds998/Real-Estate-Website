@@ -1,0 +1,17 @@
+{
+    "_id" : ObjectId("61d9b154bea71bd7d5fe73a7"),
+    "favorites" : [],
+    "name" : "Admin",
+    "surname" : "Admin",
+    "username" : "admin",
+    "password" : "Administrator21!",
+    "type" : "administrator",
+    "city" : "Beograd",
+    "birthday" : "2022-01-12 00:00:00.000Z",
+    "email" : "admin@gmail.com",
+    "phone" : "0110001001",
+    "picture" : "admin-favicon.png",
+    "agency" : "",
+    "licence" : 0,
+    "approved" : 1
+}

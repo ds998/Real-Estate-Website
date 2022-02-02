@@ -1,0 +1,17 @@
+{
+    "_id" : ObjectId("61dc0fef118682e33180d12c"),
+    "streets" : [ 
+        "Djordja Pavlovica", 
+        "Jovanke Radakovic", 
+        "Predraga Vasica", 
+        "Milana Rakica"
+    ],
+    "lines" : [ 
+        11, 
+        14
+    ],
+    "name" : "Mirijevo I",
+    "city" : "Beograd",
+    "municipality" : "Zvezdara",
+    "__v" : 0
+}

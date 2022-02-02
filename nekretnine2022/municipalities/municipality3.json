@@ -1,0 +1,10 @@
+{
+    "_id" : ObjectId("61cc5f52986368abdcad629c"),
+    "name" : "Liman IV",
+    "city" : "Novi Sad",
+    "lines" : [ 
+        8, 
+        11, 
+        12
+    ]
+}

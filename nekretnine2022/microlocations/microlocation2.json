@@ -1,0 +1,16 @@
+{
+    "_id" : ObjectId("61dc139b118682e33180d12e"),
+    "streets" : [ 
+        "Koste Abrasevica", 
+        "Brace Milanov", 
+        "Odeska", 
+        "Gornicevska"
+    ],
+    "lines" : [ 
+        3
+    ],
+    "name" : "Cvetkova Pijaca",
+    "city" : "Beograd",
+    "municipality" : "Zvezdara",
+    "__v" : 0
+}

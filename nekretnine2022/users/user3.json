@@ -1,0 +1,18 @@
+{
+    "_id" : ObjectId("61df2a4d03e63d33df990134"),
+    "favorites" : [],
+    "name" : "Nikola",
+    "surname" : "Mirkovic",
+    "username" : "lebron",
+    "password" : "ABCD1234!",
+    "type" : "advertiser",
+    "city" : "Lazarevac",
+    "birthday" : ISODate("1998-09-29T00:00:00.000Z"),
+    "email" : "lebron@gmail.com",
+    "phone" : "0111566887",
+    "picture" : "lebron-favicon_transparent.png",
+    "agency" : "",
+    "licence" : 0,
+    "approved" : 1,
+    "__v" : 0
+}

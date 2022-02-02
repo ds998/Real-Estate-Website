@@ -1,0 +1,9 @@
+{
+    "_id" : ObjectId("61d9c865f9b994a8350e869f"),
+    "name" : "Za Dobar Stan",
+    "address" : "Palmoticeva 7",
+    "city" : "Beograd",
+    "phone" : "0113923231",
+    "PIB" : "011022035",
+    "__v" : 0
+}

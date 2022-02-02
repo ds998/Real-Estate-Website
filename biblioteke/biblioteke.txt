@@ -1,0 +1,5 @@
+Angular-material
+Ng-multiselect-dropdown
+Ng2-file-upload
+Ngbmodule/material-carousel
+Multer(backend)

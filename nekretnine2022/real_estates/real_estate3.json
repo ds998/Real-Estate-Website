@@ -1,0 +1,41 @@
+{
+    "_id" : ObjectId("61e4d6b4923432533d06609a"),
+    "lines" : [ 
+        11, 
+        14
+    ],
+    "state" : "LUX",
+    "heating" : "CG",
+    "characteristics" : [ 
+        "Terasa", 
+        "Lodja", 
+        "Internet", 
+        "Telefon"
+    ],
+    "pictures" : [ 
+        "Novonovogradnja-Jovanke Radakovic-naruto-1-eksterijer_1.jpeg", 
+        "Novonovogradnja-Jovanke Radakovic-naruto-2-eksterijer_2.jpeg", 
+        "Novonovogradnja-Jovanke Radakovic-naruto-3-eksterijer_3.jpeg"
+    ],
+    "name" : "Novonovogradnja",
+    "microlocation" : "61dc0fef118682e33180d12c",
+    "street" : "Jovanke Radakovic",
+    "area" : 55,
+    "type" : "Stan",
+    "rooms" : 4,
+    "construction_year" : 2022,
+    "floor" : 2,
+    "total_floors" : 7,
+    "parking" : "Da",
+    "monthly_utilities" : 180,
+    "price" : 215000,
+    "about" : "Skroz dobar novi stan.",
+    "advertiser" : {
+        "type" : "agency",
+        "PIB" : "011022033",
+        "username" : "naruto"
+    },
+    "selling_month" : 0,
+    "change_time" : null,
+    "__v" : 0
+}
