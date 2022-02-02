@@ -1,0 +1,118 @@
+<navbar></navbar>
+
+<form [formGroup]="form" (ngSubmit)="search()">
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+            <option *ngFor="let t of type" value="{{t}}">{{t}}</option>
+        </select>
+        <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+            <div *ngIf="f.type.errors.required">Type is required</div>
+        </div>
+    </div> 
+    <div class="form-group">
+            <label for="cities">Cities</label>
+            <ng-multiselect-dropdown
+                [settings]="dropdown_settings"
+                [data]="city_dropdown_list"
+                formControlName="city"
+                [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+            </ng-multiselect-dropdown>
+    </div>
+    <div class="form-group">
+            <label for="municipalities">Municipalities</label>
+            <ng-multiselect-dropdown
+                [settings]="dropdown_settings"
+                [data]="municipality_dropdown_list"
+                formControlName="municipality"
+                [ngClass]="{ 'is-invalid': submitted && f.municipality.errors }">
+            </ng-multiselect-dropdown>
+    </div>
+    <div class="form-group">
+        <label for="microlocations">Microlocations</label>
+            <ng-multiselect-dropdown
+                [settings]="dropdown_settings"
+                [data]="microlocation_dropdown_list"
+                formControlName="microlocation"
+                [ngClass]="{ 'is-invalid': submitted && f.microlocation.errors }">
+            </ng-multiselect-dropdown>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+    </div>
+    <div class="form-group">
+        <label for="area">Area</label>
+        <input type="number" formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }">
+    </div>
+    <div class="form-group">
+        <label for="rooms">Rooms</label>
+        <select formControlName="rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rooms.errors }">
+            <option *ngFor="let r of rooms" value="{{r}}">{{r}}+</option>
+        </select>
+    </div>
+    <div class="form-group" style="display:flex;justify-content:center;align-items:center">                            
+        <button [disabled]="loading" class="standardButton" style="margin-top:10%">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Search
+        </button>
+    </div>
+</form>
+<hr/>
+<div class="error" *ngIf="error>0">
+    {{error_message}}
+</div>
+<mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.location}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="area">
+        <mat-header-cell *matHeaderCellDef>Area</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.area}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rooms">
+        <mat-header-cell *matHeaderCellDef>Rooms</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.rooms}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="total_floors">
+        <mat-header-cell *matHeaderCellDef>Total floors</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.total_floors}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="about">
+        <mat-header-cell *matHeaderCellDef>About</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.about}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.price}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="average">
+        <mat-header-cell *matHeaderCellDef>Average</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.average}}</mat-cell>
+    </ng-container>
+
+    
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="row_link(row._id)"></mat-row>
+
+    
+</mat-table>
+<mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+</mat-paginator>
+

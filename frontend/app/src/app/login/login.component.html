@@ -1,0 +1,49 @@
+<navbar></navbar>
+
+<form [formGroup]="form" (ngSubmit)="login()">
+	<div class="form-group">
+		<label for="username">Username</label>
+		<input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+		<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+			<div *ngIf="f.username.errors.required">Username is required</div>                                                                
+		</div>                                                                                    
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+		<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+			<div *ngIf="f.password.errors.required">Password is required</div>
+		</div>
+	</div>                        
+	<div class="form-group" style="display:flex;justify-content:center;margin-top:3%">                            
+		<button [disabled]="loading" class="standardButton" style="width:20%">
+			<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+			Login
+		</button>
+	</div>
+    <div class="error" *ngIf="attempt<0">
+        {{message}}
+    </div>
+</form>
+<br/>
+<table>
+	<tr>
+		<td  *ngFor="let real_estate of real_estates">
+			<mat-card class="example-card">
+				<mat-card-header><mat-card-title>{{real_estate.name}}</mat-card-title></mat-card-header>
+				<img mat-card-image style="width:300px;height:300px;"src="{{pictures[real_estate._id]}}" alt="Picture">
+				<mat-card-content>
+					<p>{{real_estate.price}} €</p>
+					<p>Lines:</p>
+					<div style="display:flex;">
+						<div *ngFor="let line of real_estate.lines">
+							{{line}};
+						</div>
+					</div>
+					
+				</mat-card-content>
+			</mat-card>
+			
+		</td>
+	</tr>
+</table>

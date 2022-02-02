@@ -1,0 +1,46 @@
+<navbar></navbar>
+
+<mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.username}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="approve">
+        <mat-header-cell *matHeaderCellDef>Approve</mat-header-cell>
+        <mat-cell *matCellDef="let el">
+            <button mat-button style="padding-left:0" [disabled]="el.approve==0" (click)="change_approval(el.username,1)">Approve</button>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="deny">
+        <mat-header-cell *matHeaderCellDef>Deny</mat-header-cell>
+        <mat-cell *matCellDef="let el">
+            <button mat-button style="padding-left:0" [disabled]="el.deny==0" (click)="change_approval(el.username,-1)">Deny</button>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+        <mat-header-cell *matHeaderCellDef>Update</mat-header-cell>
+        <mat-cell *matCellDef="let el">
+            <button mat-button style="padding-left:0" [disabled]="el.update==0" routerLink="update_user/{{el.username}}">Update</button>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+        <mat-cell *matCellDef="let el">
+            <button mat-button style="padding-left:0" [disabled]="el.delete==0" (click)="remove_user(el.username)">Delete</button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    
+</mat-table>
+<mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+</mat-paginator>

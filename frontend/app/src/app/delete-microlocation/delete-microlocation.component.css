@@ -1,0 +1,9 @@
+:host{
+    height: 100% !important;
+}
+
+mat-table,mat-paginator{
+    background-color:grey;
+    width:40%;
+    margin:auto;
+}

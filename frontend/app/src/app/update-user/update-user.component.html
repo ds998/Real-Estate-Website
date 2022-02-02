@@ -1,0 +1,143 @@
+<navbar></navbar>
+
+<form [formGroup]="form" (ngSubmit)="update_user()">
+    <table>
+    <tr>
+    <td>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+    </div>
+    </td>
+    <td>
+    <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" formControlName="surname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.surname.errors }">
+        <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+            <div *ngIf="f.surname.errors.required">Surname is required</div>
+        </div>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+		<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+			<div *ngIf="f.password.errors.required">Password is required</div>
+			<div *ngIf="f.password.errors.password_not_valid">Password does not have the specified format (at least 8 characters,starting with a letter)</div>
+			<div *ngIf="f.password.errors.password_number_not_valid">Password does not have at least one cipher</div>
+			<div *ngIf="f.password.errors.password_bigletter_not_valid">Password does not have at least one big letter</div>
+			<div *ngIf="f.password.errors.password_special_not_valid">Password does not have at least one special character</div>
+		</div>
+	</div>
+    </td>
+    <td>
+        <div class="form-group">
+            <label for="type">Type</label>
+    
+                <select formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                    <option value="buyer">Buyer</option>
+                    <option value="advertiser">Advertiser</option>
+                    <option value="administrator">Administrator</option>
+                </select>
+            
+            <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                <div *ngIf="f.type.errors.required">Type is required</div>
+            </div>
+        </div>
+        </td>
+    </tr>
+    <tr>
+    <td>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                <div *ngIf="f.city.errors.required">City is required</div>
+            </div>
+        </div> 
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="birthday">Day of birth</label>
+                <input type="date" formControlName="birthday" value="{{unaltered_user.birthday}}" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.birthday.errors }">
+                <div *ngIf="submitted && f.birthday.errors" class="invalid-feedback">
+                    <div *ngIf="f.birthday.errors.required">Birthday is required</div>
+                </div>
+            </div>
+            </td>
+    </tr>
+    <tr>
+    <td>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be in correct format</div>
+            </div>
+        </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                    <div *ngIf="f.phone.errors.required">Phone is required</div>
+                    <div *nfIf="f.phone.errors.phone">Phone must have ten digits.</div>
+                </div>
+            </div>
+            </td>
+    </tr>
+    <tr>
+    <td>
+    <div class="form-group" *ngIf="f.type.value=='advertiser'">
+            <label for="agency">Agency</label>
+            <select formControlName="agency" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.agency.errors }">
+                <option *ngFor="let agency of all_agencies" value="{{agency.PIB}}">{{agency.name}}</option>
+            </select>
+            
+        </div>
+    </td>
+    <td>
+        <div class="form-group" *ngIf="f.type.value=='advertiser'">
+            <label for="licence">Licence</label>
+            <input type="number" formControlName="licence" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licence.errors }">
+        </div>
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-group" style="margin-left:10%;margin-top:5%">
+                    <input type="file" formControlName="picture" id="file" name="file" accept="image/png, image/jpg, image/jpeg" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" [ngClass]="{ 'is-invalid': submitted && f.picture.errors }">
+                    <div *ngIf="submitted && f.picture.errors" class="invalid-feedback">
+                        <div *ngIf="f.picture.errors.required">Picture is required</div>
+                    </div>
+                </div>
+            </td>
+    <td>                   
+        <div class="form-group" style="display:flex;justify-content:center;align-items:center">                            
+            <button [disabled]="loading" class="standardButton" style="margin-top:10%">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Update
+            </button>
+        </div>
+        </td>
+    </tr>
+    </table>
+    <div class="error" *ngIf="error>0">
+            {{error_message}}
+    </div>
+</form>
+
+
+ 
+
+
+
+

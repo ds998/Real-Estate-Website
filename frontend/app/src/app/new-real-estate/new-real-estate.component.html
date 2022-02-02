@@ -1,0 +1,220 @@
+<navbar></navbar>
+
+
+<form [formGroup]="form" (ngSubmit)="new_real_estate()">
+    <table>
+    <tr>
+    <td>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+    </div>
+    </td>
+    <td>
+    <div class="form-group">
+        <label for="surname">Microlocation</label>
+        <select formControlName="microlocation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.microlocation.errors }">
+            <option *ngFor="let microlocation of microlocations" value="{{microlocation._id}}">{{microlocation.name}} - {{microlocation.municipality}} - {{microlocation.city}}</option>
+        </select>
+        <div *ngIf="submitted && f.microlocation.errors" class="invalid-feedback">
+            <div *ngIf="f.microlocation.errors.required">Microlocation is required</div>
+        </div>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <div class="form-group" *ngIf="f.microlocation.value!=''">
+        <label for="street">Street</label>
+        <select formControlName="street" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }">
+            <option *ngFor="let street of streets" value="{{street}}">{{street}}</option>
+        </select>
+        <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+            <div *ngIf="f.street.errors.required">Street is required</div>
+        </div>
+    </div>
+    </td>
+    <td>
+        <div class="form-group" *ngIf="f.microlocation.value!=''">
+            <label for="lines">Lines</label>
+            <ng-multiselect-dropdown
+                [settings]="dropdown_settings"
+                [data]="line_dropdown_list"
+                formControlName="lines"
+                [ngClass]="{ 'is-invalid': submitted && f.lines.errors }">
+            </ng-multiselect-dropdown>
+            <div *ngIf="submitted && f.lines.errors" class="invalid-feedback">
+                <div *ngIf="f.lines.errors.required">Lines are required</div>                                                                
+            </div>                                                                                    
+        </div>     
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <div class="form-group">
+        <label for="area">Area</label>
+        <input type="number" formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }">
+        <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
+			<div *ngIf="f.area.errors.required">Area is required</div>
+            <div *ngIf="f.area.errors.min">Area must be greater than zero</div>
+		</div>
+    </div>
+    </td>
+    <td>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <select formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                <option *ngFor="let t of type" value="{{t}}">{{t}}</option>
+            </select>
+            <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                <div *ngIf="f.type.errors.required">Type is required</div>
+            </div>
+        </div> 
+        </td>
+    </tr>
+    <tr>
+    <td>
+    <div class="form-group">
+        <label for="rooms">Rooms</label>
+        <input type="number" formControlName="rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rooms.errors }">
+        <div *ngIf="submitted && f.rooms.errors" class="invalid-feedback">
+            <div *ngIf="f.rooms.errors.required">Rooms are required</div>
+            <div *ngIf="f.rooms.errors.min">Number of rooms must be greater than zero</div>
+        </div>
+    </div>
+    </td>
+    <td>
+        <div class="form-group">
+            <label for="construction_year">Construction year</label>
+            <input type="number" formControlName="construction_year" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.construction_year.errors }">
+            <div *ngIf="submitted && f.construction_year.errors" class="invalid-feedback">
+                <div *ngIf="f.construction_year.errors.required">Construction year is required</div>
+                <div *ngIf="f.construction_year.errors.min">Construction year must be greater than zero</div>
+            </div>
+        </div>
+        </td>
+    </tr>
+    <tr>
+    <td>
+    <div class="form-group">
+        <label for="state">State</label>
+            <select formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                <option *ngFor="let state of states" value="{{state}}">{{state}}</option>
+            </select>
+            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                <div *ngIf="f.state.errors.required">State is required</div>                                                                
+            </div>
+    </div>
+    </td>
+    <td>
+        <div class="form-group">
+            <label for="heating">Heating</label>
+                <select formControlName="heating" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.heating.errors }">
+                <option *ngFor="let heating of heatings" value="{{heating}}">{{heating}}</option>
+                </select>
+                <div *ngIf="submitted && f.heating.errors" class="invalid-feedback">
+                    <div *ngIf="f.heating.errors.required">Heating is required</div>                                                                
+                </div>
+        </div>
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-group">
+                <label for="floor">Floor</label>
+                <input type="number" formControlName="floor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.floor.errors }">
+                
+            </div>
+            </td>
+    <td>
+        <div class="form-group">
+            <label for="total_floors">Total Floors</label>
+            <input type="number" formControlName="total_floors" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.total_floors.errors }">
+            <div *ngIf="submitted && f.total_floors.errors" class="invalid-feedback">
+                <div *ngIf="f.total_floors.errors.required">Total floors are required</div>
+                <div *ngIf="f.total_floors.errors.min">Total floors must be greater than zero</div>
+            </div>
+        </div>
+    </td>                
+    </tr>
+    <tr>
+        <td>
+            <div class="form-group">
+                <label for="parking">Parking</label>
+                <select formControlName="parking" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.parking.errors }">
+                    <option *ngFor="let park of parking" value="{{park}}">{{park}}</option>
+                </select>
+                <div *ngIf="submitted && f.parking.errors" class="invalid-feedback">
+                    <div *ngIf="f.parking.errors.required">Parking is required</div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="monthly_utilities">Monthly utilities</label>
+                <input type="number" formControlName="monthly_utilities" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.monthly_utilities.errors }">
+                <div *ngIf="submitted && f.monthly_utilities.errors" class="invalid-feedback">
+                    <div *ngIf="f.monthly_utilities.errors.required">Monthly utilities are required</div>
+                    <div *ngIf="f.monthly_utilities.errors.min">Monthly utilities must be greater than zero</div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                    <div *ngIf="f.price.errors.required">Price is required</div>
+                    <div *ngIf="f.price.errors.min">Price must be greater than zero</div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="about">About</label>
+                <input type="text" formControlName="about" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.about.errors }">
+                <div *ngIf="submitted && f.about.errors" class="invalid-feedback">
+                    <div *ngIf="f.about.errors.required">About is required</div>
+                    <div *ngIf="f.about.errors.maxLength">About must be of length less than or equal to 500 characters.</div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="characteristics">Characteristics</label>
+            <ng-multiselect-dropdown
+                [settings]="dropdown_settings"
+                [data]="characteristics_dropdown_list"
+                formControlName="characteristics"
+                [ngClass]="{ 'is-invalid': submitted && f.characteristics.errors }">
+            </ng-multiselect-dropdown>
+            <div *ngIf="submitted && f.characteristics.errors" class="invalid-feedback">
+                <div *ngIf="f.characteristics.errors.required">Characteristics are required</div>                                                                
+            </div>
+        </td>
+        <td>
+            <div class="form-group" style="margin-left:10%;margin-top:5%">
+                <input type="file" formControlName="pictures" id="files" name="files" accept="image/png, image/jpg, image/jpeg" multiple ng2FileSelect [uploader]="uploader" [ngClass]="{ 'is-invalid': submitted && f.pictures.errors }">
+                <div *ngIf="submitted && f.pictures.errors" class="invalid-feedback">
+                    <div *ngIf="f.pictures.errors.required">Pictures are required</div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </table>
+    <div class="form-group" style="display:flex;justify-content:center;align-items:center">                            
+        <button [disabled]="loading" class="standardButton" style="margin-top:10%">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            New real estate
+        </button>
+    </div>
+    <div class="error" *ngIf="error>0">
+            {{error_message}}
+    </div>
+</form>

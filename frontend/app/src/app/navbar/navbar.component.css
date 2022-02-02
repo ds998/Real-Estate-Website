@@ -1,0 +1,28 @@
+.nav-item {
+    font-size: 16pt;
+}
+div{
+    font-size: 14 pt;
+}
+.gray{
+    color: darkgray;
+}
+.activeLink{
+    color:white  !important;
+    background-color: rgb(2, 18, 53);
+    border-radius: 10pt;
+ 
+}
+
+.activeLink2{
+    color:white  !important;
+    background-color: rgb(239, 244, 253);
+    border-radius: 10pt;
+ 
+}
+
+.user-picture{
+    border-radius:500px;
+    width:50px;
+    height:50px;
+}

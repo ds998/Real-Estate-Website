@@ -1,0 +1,35 @@
+<navbar></navbar>
+
+<mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef>Microlocation</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="municipality">
+        <mat-header-cell *matHeaderCellDef>Municipality</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.municipality}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+        <mat-cell *matCellDef="let el">{{el.city}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+        <mat-cell *matCellDef="let el">
+            <button mat-button style="padding-left:0" (click)="remove_microloc(el._id)">Delete</button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    
+</mat-table>
+<mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+</mat-paginator>

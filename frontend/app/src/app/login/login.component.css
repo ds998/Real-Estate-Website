@@ -1,0 +1,23 @@
+:host{
+    height:100%!important;
+    overflow-y:scroll;
+}
+
+.error{
+    color:red;
+    display:flex;
+    justify-content:center;
+}
+
+form{
+    width:40%;
+    display:block;
+    margin:auto;
+}
+
+table{
+    margin:auto;
+}
+
+
+

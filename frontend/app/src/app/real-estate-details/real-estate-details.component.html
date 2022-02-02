@@ -1,0 +1,96 @@
+<navbar></navbar>
+
+<div class="header" *ngIf="real_estate && microlocation">
+    <p class="left-header">{{microlocation.name}} - {{real_estate.street}} {{real_estate.name}}</p>
+    <p class="right-header">{{microlocation.city}} - opština {{microlocation.municipality}} - {{microlocation.name}} - {{real_estate.street}}</p>
+</div>
+<div class="main-content">
+    <div class="left-main">
+        <div style="margin-top:3%;">
+            <mat-carousel
+              timings="250ms ease-in"
+              [autoplay]="true"
+              interval="5000"
+              color="accent"
+              maxWidth="auto"
+              proportion="20"
+              slides="5"
+              [loop]="true"
+              [hideArrows]="false"
+              [hideIndicators]="false"
+              [useKeyboard]="true"
+              [useMouseWheel]="false"
+              orientation="ltr"
+            >
+              <mat-carousel-slide
+                #matCarouselSlide
+                *ngFor="let image of images; let i = index"
+                [image]="image.image"
+                overlayColor="#00000040"
+                [hideOverlay]="false"
+              ></mat-carousel-slide>
+            </mat-carousel>
+        </div>
+        <div class="price">
+            <p *ngIf="((real_estate.price*1.0)/real_estate.area)<=average_number" class="green_price">{{real_estate.price}}</p>
+            <p *ngIf="((real_estate.price*1.0)/real_estate.area)>average_number" class="red_price">{{real_estate.price}}</p>
+        </div>
+        <div class="about_title_char">Karakteristike</div>
+        <div class="about_desc">
+            <table>
+                <tr>
+                    <td><input type="checkbox" disabled [checked]="char_input['Terasa']==1"> Terasa</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Podrum']==1"> Podrum</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Internet']==1"> Internet</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" disabled [checked]="char_input['Lodja']==1"> Lodja</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Garaža']==1"> Garaža</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Interfon']==1"> Interfon</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" disabled [checked]="char_input['Francuski balkon']==1"> Francuski balkon</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Sa baštom']==1"> Sa baštom</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Telefon']==1"> Telefon</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" disabled [checked]="char_input['Lift']==1"> Lift</td>
+                    <td><input type="checkbox" disabled [checked]="char_input['Klima']==1"> Klima</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="right-main">
+        <div class="square_info">
+            <div class="type">Tip: {{real_estate.type}}</div>
+            <div class="area">Kvadratura: {{real_estate.area}} m2</div>
+            <div class="rooms">Soba: {{real_estate.rooms}}</div>
+        </div>
+        <div class="regular_info">
+            <div class="regular_left">
+                <p *ngIf="agency">Oglašivač: agencija</p>
+                <p *ngIf="!agency">Oglašivač: vlasnik</p>
+                <p>Godina izgradnje: {{real_estate.construction_year}}</p>
+                <p>Stanje nekretnine: {{real_estate.state}}</p>
+                <p>Tip grejanja: {{real_estate.heating}}</p>
+            </div>
+            <div class="regular_right">
+                <p *ngIf="real_estate.floor>0">Sprat:{{real_estate.floor}}</p>
+                <p *ngif="real_estate.floor==0">Sprat: nema sprata</p>
+                <p>Ukupna spratnost: {{real_estate.total_floors}}</p>
+                <p>Parking: {{real_estate.parking}}</p>
+            </div>
+            
+        </div>
+        <div class="favorite_button">
+            <button (click)="favorite()">Dodaj u omiljene</button>
+        </div>
+        <div class="about_title">Opis</div>
+        <div class="about_desc">
+            <p style="padding-top:2%;">{{real_estate.about}}</p>
+            <p style="display:inline-block; margin:auto; padding-top:2%; font-size:15px; border-bottom:2px solid lightblue;margin-left:20%;margin-right:20%;">Prosečna cena na lokaciji: {{average_number}} €/m2</p>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,21 @@
+:host{
+    height:100% !important;
+}
+
+table{
+    margin:auto;
+}
+
+form{
+    width:80%;
+    display:block;
+    margin:auto;
+}
+
+.error{
+    color:red;
+    display:flex;
+    justify-content:center;
+}
+
+

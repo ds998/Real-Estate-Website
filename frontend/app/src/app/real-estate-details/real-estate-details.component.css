@@ -1,0 +1,185 @@
+:host{
+    height:100% !important;
+    overflow-y: scroll;
+}
+
+.header{
+    background-color:gray;
+    display:flex;
+    width:90%;
+    margin:auto;
+    height:8%;
+    align-items:center;
+
+}
+
+.left-header{
+    font-weight: bold;
+    font-size:20px;
+    margin-left:1%;
+}
+
+.right-header{
+    margin-left:45%;
+    margin-top:2%;
+}
+
+.main-content{
+    width:90%;
+    height:70%;
+    display:flex;
+    margin:auto;
+}
+
+.left-main{
+    width:50%;
+}
+
+.right-main{
+    width:50%;
+}
+
+.square_info{
+    display:flex;
+    height:5%;
+    width:60%;
+    margin:auto;
+    margin-top:2%;
+    border-bottom:1px solid black;
+}
+
+.type{
+    display:flex;
+    width:30%;
+    margin-right:3%;
+    background-color:bisque;
+    align-items:center;
+    justify-content:center;
+    border-radius:4px;
+}
+
+.area{
+    display:flex;
+    width:30%;
+    margin-left:2%;
+    margin-right:2%;
+    background-color:bisque;
+    align-items:center;
+    justify-content:center;
+    border-radius:4px;
+}
+
+p{
+    text-align:center;
+}
+
+.rooms{
+    display:flex;
+    width:30%;
+    margin-left:3%;
+    background-color:bisque;
+    align-items:center;
+    justify-content:center;
+    border-radius:4px;
+}
+
+.regular_info{
+    display:flex;
+    width:80%;
+    height:40%;
+    margin:auto;
+    margin-top:5%;
+}
+
+.regular_left{
+    width:50%;
+    height:100%;
+    
+}
+
+.regular_right{
+    width:50%;
+    height:100%;
+    
+}
+
+.favorite_button{
+    display:flex;
+    justify-content:flex-end;
+    height:10%;
+}
+
+button{
+    margin-right:25%;
+    background-color:rgb(24, 212, 236);
+    color:white;
+    height:50%;
+    width:25%;
+    border-color:rgb(24,212,236);
+    font-size:20px;
+}
+
+.about_title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:10%;
+    height:5%;
+    background-color:bisque;
+    margin-left:10%;
+    border-top:3px solid rgb(228, 177, 10);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.about_title_char{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:12%;
+    height:5%;
+    background-color:bisque;
+    margin-left:10%;
+    border-top:3px solid rgb(228, 177, 10);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.about_desc{
+    width:80%;
+    background-color:bisque;
+    margin:auto;
+    height:25%;
+    display:block;
+}
+
+.price{
+    height:32%;
+    
+}
+
+.green_price{
+    display:inline-block;
+    padding-top:10%; 
+    font-size:15px; 
+    border-bottom:2px solid lightblue;
+    color:green;
+    margin-left:80%;
+}
+
+.red_price{
+    display:inline-block;
+    padding-top:10%; 
+    font-size:15px; 
+    border-bottom:2px solid lightblue;
+    color:green;
+    margin-left:80%;
+}
+
+table{
+    margin:auto;
+    padding-top:3%;
+    height:90%;
+    width:50%;
+}
+

@@ -1,0 +1,17 @@
+mat-row:hover{
+    background-color: rgba(0, 0, 0, .05);
+    cursor: pointer;
+}
+
+
+:host{
+    height: 100% !important;
+    overflow-y:scroll;
+}
+
+mat-table,mat-paginator{
+    background-color:rgb(151, 152, 153);
+    width:80%;
+ 
+    margin:auto;
+}
